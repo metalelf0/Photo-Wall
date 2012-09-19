@@ -3,18 +3,19 @@
 Photo Wall is a simple rails app that allows you to import a collection of photos
 and display them as an auto-paging mobile friendly mural.
 
-I wrote this to display my wallpaper repository.
+I created this simple app to display my wallpaper repository.
 
 http://wallpaper.hilscher.ca
 
 
-== Getting Started
+== Instructions
 
 1. Clone, bundle, rake db:migrate.
+      git clone git://github.com/blakehilscher/Photo-Wall.git
       bundle
       rake db:migrate
       
 2. Run rake import:photos[/path/to/files]
-      rake import:photos[/Users/me/Pictures/*.jpg]
-
+      rake import:photos[/Users/yakshaver/Pictures/*.jpg]
+      
 3. Go to http://localhost:3000/ and there you are.
