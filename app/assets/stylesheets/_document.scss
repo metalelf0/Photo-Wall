@@ -6,7 +6,7 @@ html,body{
 #container{
   max-width:1600px;
   margin:0 auto;
-  min-height:1000px;
+  min-height:800px;
   padding:0px;
 }
 
@@ -14,7 +14,12 @@ html,body{
   #container{
     margin:2% auto;
     box-shadow:#5C5531 0px -10px 80px;
-    padding:0 20px;
     border-radius:40px;
+    .container_inner{
+      padding:20px;
+    }
+  }
+  .collection-pagination.top .pagination{
+    margin-top:0px;
   }
 }

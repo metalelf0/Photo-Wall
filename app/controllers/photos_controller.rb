@@ -5,7 +5,7 @@ class PhotosController < ApplicationController
   end
   
   def show
-    respond_with @photo = Photo.find(params[:page_id])
+    respond_with @photo = Photo.find(params[:id])
   end
   
 end

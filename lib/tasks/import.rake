@@ -9,6 +9,10 @@ namespace :import do
     path = File.join(file_path)
     files = Dir.glob(path)
     ticker = 0
+    if files.blank?
+      puts "Error: no files found."
+      next
+    end
     files.each do |file|
       name = File.basename(file)
       if Photo.where(:file => name ).count >= 1
