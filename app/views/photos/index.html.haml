@@ -1,0 +1,8 @@
+.collection-pagination.top= paginate @photos
+%ul.collection.photos
+  - @photos.each do |photo|
+    %li.photo{:class => cycle('first','second','third','fourth') }
+      .photo_inner
+        = link_to( image_tag( photo.file_url(:thumb) ), photo.file_url, :target => '_blank' )
+        
+.collection-pagination= paginate @photos
