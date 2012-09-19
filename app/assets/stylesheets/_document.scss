@@ -55,8 +55,12 @@ html,body{
       top:20px;
       right:20px;
     }
-  }
-  .collection-pagination.top .pagination{
-    margin-top:0px;
+    .collection-pagination.top{
+      display:block;
+      .pagination{
+        margin-top:0px;
+      }
+    } 
+    
   }
 }

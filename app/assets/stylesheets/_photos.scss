@@ -56,6 +56,9 @@
     color:#bbb;
   }
 }
+.collection-pagination.top{
+  display:none;
+}
 
 @media only screen and (max-width: 1200px) {
   .collection.photos .photo{ width:33.3333%; }
@@ -68,8 +71,5 @@
     width:100%;
     float:none;
     display:block;
-  }
-  .collection-pagination.top{
-    display:none;
   }
 }
