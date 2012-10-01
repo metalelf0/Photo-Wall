@@ -10,12 +10,19 @@ http://wallpaper.hilscher.ca
 
 == Instructions
 
-1. Clone, bundle, rake db:migrate.
+1. Clone and bundle
       git clone git://github.com/blakehilscher/Photo-Wall.git
       bundle
+      
+2. Setup Database Configuration
+      cp config/database.example database.yml
+      vim database.yml # edit the db config and set your user & password
+      
+3. Create Database
+      rake db:create
       rake db:migrate
       
-2. Run rake import:photos[/path/to/files]
-      rake import:photos[/Users/yakshaver/Pictures/*.jpg]
+4. Run rake import:photos[/path/to/photos/*]
+      rake import:photos[/home/user/pictures/*.jpg]
       
-3. Go to http://localhost:3000/ and there you are.
+5. Go to http://localhost:3000/ and there you are.
