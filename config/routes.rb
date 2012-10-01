@@ -2,7 +2,11 @@ PhotoWall::Application.routes.draw do
   
   root :to => 'photos#index'
   
-  resources :photos
+  resources :photos do
+    collection do
+      get 'random/:seed', :action => 'random', :as => 'random'
+    end
+  end
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

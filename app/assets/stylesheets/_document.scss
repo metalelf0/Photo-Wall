@@ -14,6 +14,11 @@ html,body{
     top:10px;
     right:10px;
   }
+  .random{
+    position:absolute;
+    top:10px;
+    left:10px;
+  }
 }
 
 .icon-github{
@@ -26,7 +31,17 @@ html,body{
   margin:0px;
 }
 
-.github{
+.icon-random{
+  background:image-url('icon-random.png') transparent;
+  width:image-width('icon-random.png');
+  height:image-height('icon-random.png');
+  text-indent:-9999px;
+  display:inline-block;
+  padding:0px;
+  margin:0px;
+}
+
+.button{
   border-radius:10px;
   background-color:#f4f4f4;
   border:1px solid #333;
@@ -41,19 +56,27 @@ html,body{
       text-decoration:none;
     }
   }
+  &.active{
+    background-color:#D8E482;
+  }
 }
 
 @media only screen and (min-width: 1600px) {
+  #main{
+    padding:20px;
+  }
   #container{
     margin:2% auto;
     box-shadow:#39494B 0px -10px 80px;
     border-radius:40px;
-    .container_inner{
-      padding:20px;
-    }
     .github{
       top:20px;
       right:20px;
+    }
+    .random{
+      position:absolute;
+      top:20px;
+      left:20px;
     }
     .collection-pagination.top{
       display:block;
