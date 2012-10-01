@@ -10,10 +10,11 @@ http://wallpaper.hilscher.ca
 
 == Instructions
 
-1. Clone and bundle
+1. Clone and Bundle
       git clone git://github.com/blakehilscher/Photo-Wall.git
+      cd Photo-Wall/
       bundle
-      
+            
 2. Setup Database Configuration
       cp config/database.example database.yml
       vim database.yml # edit the db config and set your user & password
