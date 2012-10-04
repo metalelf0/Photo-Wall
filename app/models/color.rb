@@ -5,4 +5,8 @@ class Color < ActiveRecord::Base
 
   has_many :palette_entries
   has_many :photos, :through => :palette_entries
+
+  def to_hex
+    "#%02X%02X%02X" % [red, green, blue]
+  end
 end
