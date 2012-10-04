@@ -10,7 +10,7 @@ describe ColorUtils do
 
   it "quantizes an image colors" do
     colors = ColorUtils.new.quantize(sample_image_path)
-    colors.should have(5).color_entries
+    colors.should have(7).color_entries
     colors[0].should == [ 61, 46, 45 ]
   end
 

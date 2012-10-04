@@ -7,6 +7,6 @@ describe "Color quantization" do
   it "automatically adds colors to a photo" do
     photo = Photo.create!(@attr)
     #ColorUtils.new.quantize_photo(photo)
-    photo.should have(5).colors
+    photo.should have(7).colors
   end
 end

@@ -2,12 +2,15 @@ class ColorUtils
 
   def quantize_photo photo
     colors = quantize(photo.file.path)
-    colors.each_with_index do |color, index|
-      photo.colors << Color.find_or_create_by_red_and_green_and_blue(
-        color[0],
-        color[1],
-        color[2]
-      )
+    unless colors.empty?
+      photo.colors.delete_all
+      colors.each_with_index do |color, index|
+        photo.colors << Color.find_or_create_by_red_and_green_and_blue(
+          color[0],
+          color[1],
+          color[2]
+        )
+      end
     end
   end
 
@@ -18,7 +21,7 @@ class ColorUtils
     end
     regexp_for_rgb = /rgb\(([0-9,]+)\)/ # returns 1,2,3
     regexp_for_hex = /(#[A-F0-9]{6})/   # returns #abcdef
-    convert_output =  `convert #{image_path} -alpha OFF -colors 5 -unique-colors txt:-`
+    convert_output =  `convert #{image_path} -alpha OFF +dither -colors 7 -unique-colors txt:-`
     return convert_output.scan(regexp_for_rgb).to_a.flatten.map { |values| 
       values.split(",").map { |number| number.to_i }
     }
