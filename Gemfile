@@ -31,6 +31,11 @@ group :assets do
   gem 'colorbox-rails'
 end
 
+group :test, :development do
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+end
+
 gem 'haml'
 gem 'haml-rails'
 gem "html5-rails"

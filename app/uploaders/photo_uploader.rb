@@ -10,11 +10,16 @@ class PhotoUploader < CarrierWave::Uploader::Base
   #storage :fog
   
   process :resize_to_fill => [1920, 1080]
+  process :identify_colors
   
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+  end
+
+  def identify_colors
+    `convert #{picture.path} -quantize transparent +dither -colors 5 -unique-colors txt:- | grep -o "#[A-F0-9]\{6\}"`
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
