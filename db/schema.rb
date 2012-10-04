@@ -11,12 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121003122542) do
+ActiveRecord::Schema.define(:version => 20121004072043) do
 
   create_table "colors", :force => true do |t|
     t.integer  "red"
     t.integer  "green"
     t.integer  "blue"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "palette_entries", :force => true do |t|
+    t.integer  "color_id"
+    t.integer  "photo_id"
+    t.integer  "position"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

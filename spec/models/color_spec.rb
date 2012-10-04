@@ -20,4 +20,8 @@ describe Color do
   it { should allow_value(0).for(:blue) }
   it { should allow_value(255).for(:blue) }
   it { should_not allow_value(-5).for(:blue) }
+
+  it { should have_many(:palette_entries) }
+  it { should have_many(:photos).through(:palette_entries) }
+
 end
