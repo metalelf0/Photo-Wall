@@ -11,7 +11,12 @@ class ColorUtils
   end
 
   def photo_distance first_photo, second_photo
-    color_distance(first_photo.colors[0], second_photo.colors[0])
+    distance = 0
+    first_photo.colors.each do |first_photo_color|
+      lowest_distance_with_second_photo_colors = second_photo.colors.map { |second_photo_color| color_distance(first_photo_color, second_photo_color) }.min
+      distance += lowest_distance_with_second_photo_colors
+    end
+    return distance
   end
 
   def color_distance first_color, second_color
