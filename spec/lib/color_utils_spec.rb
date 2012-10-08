@@ -30,4 +30,26 @@ describe ColorUtils do
 
   end
 
+  describe "calculating distance between two pictures" do
+
+    class MockColor
+      Surrogate.endow self
+      attr_accessor :red, :green, :blue
+      define(:initialize) { |args| args.each_pair do |key, val| self.send(key.to_s + "=", val) end }
+    end
+
+    class MockPhoto
+      Surrogate.endow self
+      attr_accessor :colors
+      define(:initialize) { |args| args.each_pair do |key, val| self.send(key.to_s + "=", val) end }
+    end
+
+    it "returns 0 when they have the same dominating color" do
+      first_color = MockColor.new(:red => 0, :green => 1, :blue => 2)
+      first_photo = MockPhoto.new(:colors => [ first_color ] )
+      second_photo = MockPhoto.new(:colors => [ first_color ] )
+      ColorUtils.new.photo_distance(first_photo, second_photo).should == 0
+    end
+
+  end
 end

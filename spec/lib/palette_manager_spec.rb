@@ -27,6 +27,3 @@ describe PaletteManager do
     photo.palette_entries.last.position.should == 2
   end
 end
-
-      #max_position = photo.palette_entries.map { |pe| pe.position }.max || 0
-      #PaletteEntry.create(:photo_id => photo.id, :color_id => color.id, :position => max_position + 1)

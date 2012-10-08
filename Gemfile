@@ -35,6 +35,7 @@ group :test, :development do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'spork'
+  gem 'surrogate'
 end
 
 gem 'haml'
