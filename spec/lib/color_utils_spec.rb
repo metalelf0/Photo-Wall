@@ -19,13 +19,13 @@ describe ColorUtils do
     it "returns 0 when they are the same" do
       first_color = Color.new(:red => 0, :green => 1, :blue => 2)
       second_color = Color.new(:red => 0, :green => 1, :blue => 2)
-      ColorUtils.new.distance_rgb(first_color, second_color).should == 0
+      ColorUtils.new.color_distance(first_color, second_color).should == 0
     end
 
     it "returns MAX_VALUE when they are the opposite" do
       first_color = Color.new(:red => 0, :green => 0, :blue => 0)
       second_color = Color.new(:red => 255, :green => 255, :blue => 255)
-      ColorUtils.new.distance_rgb(first_color, second_color).should == 255**2 * 3
+      ColorUtils.new.color_distance(first_color, second_color).should == 255**2 * 3
     end
 
   end

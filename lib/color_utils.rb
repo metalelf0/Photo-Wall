@@ -11,10 +11,10 @@ class ColorUtils
   end
 
   def photo_distance first_photo, second_photo
-    distance_rgb(first_photo.colors[0], second_photo.colors[0])
+    color_distance(first_photo.colors[0], second_photo.colors[0])
   end
 
-  def distance_rgb first_color, second_color
+  def color_distance first_color, second_color
     return (first_color.red - second_color.red)**2 + (first_color.green - second_color.green)**2 + (first_color.blue - second_color.blue)**2
   end
 
