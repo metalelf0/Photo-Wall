@@ -44,9 +44,12 @@ describe ColorUtils do
       define(:initialize) { |args| args.each_pair do |key, val| self.send(key.to_s + "=", val) end }
     end
 
-    xit "verifies mocks" do
-      puts (::RSpec::Matchers.instance_methods - Object.methods).sort.inspect
-      MockColor.should substitute_for Color
+    it "verifies mocks - Color" do
+      MockColor.should substitute_for Color, subset: true, types: false
+    end
+
+    it "verifies mocks - Photo" do
+      MockPhoto.should substitute_for Photo, subset: true, types: false
     end
 
     it "returns 0 when they have the same dominating color" do
