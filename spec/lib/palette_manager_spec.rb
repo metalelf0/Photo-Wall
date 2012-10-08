@@ -19,10 +19,12 @@ describe PaletteManager do
 
   it "sets the right position for each color" do
     photo = Photo.create
-    color = Color.create(:red => 10, :green => 10, :blue => 10)
-    PaletteManager.new.add_color_to_photo(color, photo)
-    photo.reload
+    2.times do |i|
+      color = Color.create(:red => 10 + i, :green => 10, :blue => 10)
+      PaletteManager.new.add_color_to_photo(color, photo)
+    end
     photo.palette_entries.first.position.should == 1
+    photo.palette_entries.last.position.should == 2
   end
 end
 
