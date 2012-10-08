@@ -35,7 +35,7 @@ group :test, :development do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'spork'
-  gem 'surrogate'
+  gem 'surrogate', :git => "https://github.com/JoshCheek/surrogate.git"
 end
 
 gem 'haml'

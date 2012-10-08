@@ -44,6 +44,11 @@ describe ColorUtils do
       define(:initialize) { |args| args.each_pair do |key, val| self.send(key.to_s + "=", val) end }
     end
 
+    xit "verifies mocks" do
+      puts (::RSpec::Matchers.instance_methods - Object.methods).sort.inspect
+      MockColor.should substitute_for Color
+    end
+
     it "returns 0 when they have the same dominating color" do
       first_color = MockColor.new(:red => 0, :green => 1, :blue => 2)
       first_photo = MockPhoto.new(:colors => [ first_color ] )
